@@ -5,7 +5,7 @@ description: Builds, releases, and tests retention policies in Azure Pipelines
 ms.assetid: A9AC68EB-E013-4F86-8604-E69BB330817B
 ms.author: rabououn
 author: juliakm
-ms.date: 05/14/2021
+ms.date: 06/28/2021
 ms.custom: contperf-fy21q1, contperf-fy21q2
 monikerRange: '>= tfs-2015'
 ---
@@ -85,11 +85,9 @@ Along with defining how many days to retain runs, you can also decide the minimu
 ::: moniker range="azure-devops"
 
 > [!WARNING]
-> Azure DevOps will stop supporting per-pipeline retention rules in an upcoming release. At that time, any classic build pipeline that still has per-pipeline retention rules will be governed by the project-level retention rules instead. If you are using per-pipeline permissions, you should move your permissions to the project-level.
+> Azure DevOps no longer supports per-pipeline retention rules. 
 > The only way to configure retention policies for YAML and classic pipelines is through the project settings described above. You can no longer configure per-pipeline retention policies. 
 >
-> To remove your existing pipeline-level retention settings, edit your release pipeline. Then, remove the values on the **Retention** tab. 
-
 ::: moniker-end
 
 ::: moniker range=">= azure-devops-2019"
@@ -147,6 +145,7 @@ The following information is deleted when a run is deleted:
 * Binaries
 * Test results
 * Run metadata
+* Source labels (TFVC) or tags (Git)
 
 Universal packages, NuGet, npm, and other packages are not tied to pipelines retention. 
 
@@ -211,6 +210,7 @@ The retention policy for YAML and build pipelines is the same. You can see your 
 
 ::: moniker range="<= tfs-2018"
 You can also learn how to customize these policies on a [stage-by-stage basis](#stage-specific-retention-policies) later in this article.
+
 ::: moniker-end
 
 ### Global release retention policy
@@ -232,6 +232,17 @@ configure settings for their definitions beyond the values specified here.
 The **default retention policy** sets the default retention values for all the release pipelines. Authors of build pipelines can override these values.
 
 The **destruction policy** helps you keep the releases for a certain period of time after they are deleted. This policy cannot be overridden in individual release pipelines.
+
+
+::: moniker range=">= tfs-2018"
+## Set collection-level retention policies
+
+For on-premises servers, you can also set the collection-level retention policies with custom retention rules. These retention policies apply to Classic build pipelines. The page at `https://{your_server}/{collection_name}/_settings/buildqueue` governs your maximum values and default values. 
+
+:::image type="content" source="media/retention-settings-server.png" alt-text="Configure server collection settings":::
+
+::: moniker-end
+
 
 ::: moniker range="<=tfs-2018"
 
@@ -477,9 +488,10 @@ As the stage is deleted, so the stage level retention settings are not applicabl
 
 The only way to retain a run or a release longer than what is allowed through retention settings is to manually mark it to be retained indefinitely. There is no way to configure a longer retention setting. You can also explore the possibility of using the REST APIs in order to download information and artifacts about the runs and upload them to your own storage or artifact repository.
 
-### I lost some of the runs. Is there any way to get them back?
+### I lost some runs. Is there a way to get them back?
 
-If you believe that you have lost the runs due to a bug in the service, then create a support ticket immediately to recover the lost information. If the runs have been deleted as expected due to a retention policy or if the runs have been deleted longer than a week ago, then it is not possible to recover the lost runs.
+If you believe that you have lost runs due to a bug in the service, create a support ticket immediately to recover the lost information. If the runs were manually deleted more than a week earlier, it isn't possible to recover the lost runs. If the runs were deleted as expected due to a retention policy, it isn't possible to recover the lost runs. 
+
 
 ### How do I use the `Build.Cleanup` capability of agents?
 
@@ -492,6 +504,18 @@ Test results published within a stage of a release are retained as specified by 
 ### Are manual test results deleted?
 
 No. Manual test results are not deleted. 
+
+::: moniker range=">= azure-devops-2019"
+
+### How do I preserve my version control labels or tags? 
+
+> [!CAUTION]
+> Any version control labels or tags that are applied during a build pipeline that arent automatically created from the Sources task will be preserved, even if the build is deleted. 
+> However, any version control labels or tags that are automatically created from the Sources task during a build are considered part of the build artifacts and will be deleted when the build is deleted. 
+
+If version control labels or tags need to be preserved, even when the build is deleted, they will need to be either applied as part of a task in the pipeline, manually labeled outside of the pipeline, or the build will need to be retained indefinitely.
+
+::: moniker-end
 
 ## Related articles
 

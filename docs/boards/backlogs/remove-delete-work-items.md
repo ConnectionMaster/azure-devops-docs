@@ -2,14 +2,14 @@
 title: Remove, delete, restore work items
 titleSuffix: Azure Boards
 description: How to remove, delete, or restore (from Recycle Bin) work items in Azure Boards 
-ms.custom: "boards-backlogs, seodec18, contperf-fy21q2"
+ms.custom: "boards-backlogs, seodec18, contperf-fy21q2, linked-from-support"  
 ms.technology: devops-agile
 ms.assetid: 306929CA-DB58-45E3-AD45-B774901789D3  
 ms.author: kaelli
 author: KathrynEE
 ms.topic: how-to
 monikerRange: '<= azure-devops'
-ms.date: 10/30/2020
+ms.date: 05/21/2021 
 ---
 
 # Remove, delete, or restore work items 
@@ -31,6 +31,10 @@ Work items can live forever in your work tracking data store. You never have to 
 ::: moniker-end
 
 The ability to archive work items or projects isn't a supported feature at this time. 
+
+::: moniker range=">= azure-devops-2019"
+To move a work item from one project to another, or to change the work item type, see [Move work items, change work item type](move-change-type.md). 
+::: moniker-end
 
 ::: moniker range=">= tfs-2017"
  

@@ -2,13 +2,13 @@
 title: Bulk import or update work items using CSV files
 titleSuffix: Azure Boards
 description: Bulk import or update work items from a CSV formatted file 
-ms.custom: boards-queries
+ms.custom: "boards-queries, linked-from-support"
 ms.technology: devops-agile
 ms.author: kaelli
 author: KathrynEE
 ms.topic: how-to
 monikerRange: ">= azure-devops-2019"
-ms.date: 03/16/2021
+ms.date: 06/11/2021
 ---
 
 # Bulk import or update work items using CSV files
@@ -38,7 +38,9 @@ All work items you import are created in a new state. This rule means that you c
 
 1. Create a local ***import.csv*** file and open it in Visual Studio Code or Excel.
 
-2. The file must contain the **Work Item Type** and the **Title** fields. You can include other columns as needed. In the following example, we include the Priority field.
+2. The file must contain the **Work Item Type** and the **Title** fields. You can include other fields as needed. For a list of default fields, see [Work item field index](../work-items/guidance/work-item-field.md).  
+
+	In the following example, we include the **Priority** field.
 
    > [!div class="tabbedCodeSnippets"]
    ```CSV
@@ -151,6 +153,29 @@ From any query, you can export a list of work items as a comma-delimited list. S
 
 ::: moniker-end 
 
+
+::: moniker range=">= azure-devops-2020"
+
+## Export and import work items to a different project
+
+You can use this feature to export work items from one project and import them to another project. However, before importing them to another project, you must remove the work item ID. You encounter an error if you attempt to import new work items to a project with an ID specified. 
+
+
+## Import or update rich-text fields 
+
+You can update or import rich-text fields such as the **Description** or **Acceptance Criteria** fields. Rich-text fields are HTML formatted fields. Replace lines ending in CRLF by surrounding sentences with `<p>... </p>`. 
+
+For example, you can import the following work item which includes three lines of text in the Description field. 
+
+> [!div class="tabbedCodeSnippets"]
+```CSV
+Work Item Type,Title,Description
+"Product Backlog Item","Hello World Web Site - 8","<p><strong>&nbsp;You can include bold text</strong></p><p><em>&nbsp;And italic text</em></p><p><u>&nbsp;Underline text</u></p>"
+```
+
+
+::: moniker-end 
+
 ::: moniker range=">= azure-devops-2020"
 
 ## Q & A
@@ -185,7 +210,7 @@ ID,Work Item Type,Title 1,Title 2,Assigned To,State,Priority,Tags
 ,"Issue",,"Enable feature for customer champs",,"To Do","2",
 ```
 
-Here is a better visual in Excel
+Here is a better visual in Excel.
 
 > [!div class="mx-imgBorder"]  
 > ![Excel view image](media/import-csv/import-add-child-items.png)
@@ -206,5 +231,6 @@ The work items results always lists the data errors found for individual work it
 
 ## Related articles
 
+- [Work item field index](../work-items/guidance/work-item-field.md)
 - [Bulk add or modify work items with Excel](../backlogs/office/bulk-add-modify-work-items-excel.md)
 - [FAQs: Work in Excel connected to Azure Boards](../backlogs/office/faqs.yml)

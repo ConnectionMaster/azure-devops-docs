@@ -9,10 +9,12 @@
         "exclude": [
           "pipelines/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic.md",
           "migrate/build-deployment-best-practices.md",
+          "pipelines/release/automate-terraform.md",
           "pipelines/archive/apps/aspnet/**",
           "pipelines/archive/apps/java/**",
           "pipelines/archive/apps/nodejs/**",
           "pipelines/archive/release/**",
+          "pipelines/apps/windows/universal.md",
           "**/obj/**",
           "**/includes/**",
           "**/_data/**",
@@ -28,10 +30,12 @@
         "files": [
           "pipelines/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic.md",
           "migrate/build-deployment-best-practices.md",
+          "pipelines/release/automate-terraform.md",
           "pipelines/archive/apps/aspnet/**",
           "pipelines/archive/apps/java/**",
           "pipelines/archive/apps/nodejs/**",
-          "pipelines/archive/release/**"
+          "pipelines/archive/release/**",
+          "pipelines/apps/windows/universal.md"
         ],
         "exclude": [
           "**/obj/**",

@@ -6,9 +6,8 @@ ms.technology: devops-agile
 ms.topic: best-practice
 ms.author: kaelli
 author: KathrynEE
-monikerRange: '<= azure-devops'
-"recommendations": "true"
-ms.date: 08/24/2020
+monikerRange: '<= azure-devops' 
+ms.date: 07/09/2021
 ---
 
 
@@ -17,7 +16,7 @@ ms.date: 08/24/2020
 
 [!INCLUDE [temp](includes/version-azure-boards-plus-azure-devops-server-2020.md)]
 
-Azure Boards provides a choice of Agile planning tools, many of which work in combination with each other. This article provides a get-started guide for project managers new to Azure Boards. If you and your teams want to take a minimal tracking approach to plan and manage your projects, start with this guide. 
+Azure Boards provides a choice of Agile planning tools, many of which work in combination with each other. This article provides a get-started guide for project managers new to Azure Boards. If you and your teams want to take a minimal tracking approach to plan and manage your projects, start with this guide. Also, if you are moving from waterfall project management to Agile methods, start with this guide.
 
 > [!NOTE]
 > If your team is committed to practicing Kanban or Scrum methods, see instead [About Boards and Kanban](boards/kanban-overview.md) or the [tutorials for implementing Scrum](./sprints/scrum-overview.md). 
@@ -53,8 +52,8 @@ Azure Boards provides each team a set of Agile tools to plan and track work. Eac
 
 - [Configure a hierarchy of teams](plans/configure-hierarchical-teams.md) 
 - [Add a team, move from one default team to several teams](../organizations/settings/add-teams.md) 
-- [Agile culture](/azure/devops/learn/agile/agile-culture) 
-- [Scale Agile to Large Teams](/azure/devops/learn/agile/scale-agile-large-teams)
+- [Agile culture](/devops/plan/adopting-agile) 
+- [Scale Agile to Large Teams](/devops/plan/scaling-agile)
 
 ## Configure your sprints 
 
@@ -438,9 +437,10 @@ Teams can define one or more dashboards to share information and monitor real-ti
 
 
 ## Related articles
+- [Manage requirements](../cross-service/manage-requirements.md)
 - [Tasks supported by Backlogs, Boards, Taskboards, and Plans](backlogs/backlogs-boards-plans.md) 
 - [Work with multi-team ownership of backlog items](backlogs/backlogs-overview.md#multi-team)
-
+- [11 Reasons for using Azure Boards to plan and track your work](get-started/why-use-azure-boards.md)
 
 ### Industry articles  
 

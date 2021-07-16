@@ -34,8 +34,7 @@ Azure DevOps is pre-configured with default security groups. You can add and man
 
 - To add and manage security groups, you must be a member of the Project Collection Administrators security group.  
 - You must have installed the Azure DevOps CLI extension as described in [Get started with Azure DevOps CLI](../../cli/index.md).  
-- Sign into Azure DevOps using `az login`.  
-- Sign into Azure DevOps using `az login`.  
+- Sign into Azure DevOps using `az login`.   
 - For the examples in this article, set the default organization as follows: 
     - For **Azure DevOps Services**:  `az devops configure --defaults organization=YourOrganizationURL`.  
     - For **Azure DevOps Server**: `az devops configure --defaults organization=https://ServerName/CollectionName` 
@@ -231,7 +230,7 @@ scopeType: null
 securingHostId: null
 specialType: null
 subjectKind: group
-url: https://vssps.dev.azure.com/kelliott/_apis/Graph/Groups/vssgp.Uy0xLTktMTU1MTM3NDI0NS0xODI5NDgwMzA1LTEzNjM2MTczNTEtMjI0NzE1OTUyMC03ODEzNDk2MjItMS0zNDU1MDI4NTE4LTI5Nzg5OTAxNTYtMjI4OTU2NzYyOS0xOTM2NDU3NTYw
+url: https://vssps.dev.azure.com/fabrikam/_apis/Graph/Groups/vssgp.Uy0xLTktMTU1MTM3NDI0NS0xODI5NDgwMzA1LTEzNjM2MTczNTEtMjI0NzE1OTUyMC03ODEzNDk2MjItMS0zNDU1MDI4NTE4LTI5Nzg5OTAxNTYtMjI4OTU2NzYyOS0xOTM2NDU3NTYw
 ```
 
 ## Add a member to a group

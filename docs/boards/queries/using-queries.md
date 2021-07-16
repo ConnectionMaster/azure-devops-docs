@@ -2,7 +2,7 @@
 title: Define a work item query with the Query Editor
 titleSuffix: Azure Boards
 description: Create flat-list, tree, or direct links queries to list, triage, update, and chart work items  
-ms.custom: "boards-queries, contperf-fy21q3" 
+ms.custom: "boards-queries, contperf-fy21q3, linked-from-support" 
 ms.technology: devops-agile
 ms.assetid: 364000d3-200a-495a-bfb9-83915240af67
 ms.author: kaelli
@@ -181,6 +181,8 @@ In addition to the query filters, you can [interactively apply filters to query 
    :::column-end:::
 :::row-end:::
 ---
+
+In addition to the filters you use from the Query Editor, you can interactively filter a query result using the :::image type="icon" source="../../media/icons/filter-icon.png" border="false"::: **Filter** function. To learn how, see [Interactively filter backlogs, boards, queries, and plans](../backlogs/filter-backlogs-boards-plans.md).
 
 [!INCLUDE [temp](../includes/prerequisites-queries.md)]
 
